@@ -7,10 +7,14 @@ const PORT =process.env.PORT
 const app = express()
 
 // MIDDLEWARE
+// Express Settings
+app.set('views', __dirname + '/views')
 app.set('view engine', 'jsx')
 app.engine('jsx', require('express-react-views').createEngine())
+app.use(express.static('public'))
 
 
+// Controllers & Routes
 app.use('/places', require('./controllers/places_controller'))
 
 // HOMEPAGE
