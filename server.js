@@ -13,11 +13,13 @@ app.engine('jsx', require('express-react-views').createEngine())
 
 app.use('/places', require('./controllers/places_controller'))
 
+// HOMEPAGE
 app.get('/', (req, res) => {
     res.render('home')
 }
 )
 
+// 404
 app.get('*', (req, res) => {
     res.render('error404')
 })
