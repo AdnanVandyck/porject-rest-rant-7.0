@@ -1,10 +1,14 @@
 const router = require('express').Router()
 
+
+// CREATE
 router.post('/', (req, res) => {
     console.log(req.body)
     res.send('POST /places')
   })
 
+
+//INDEX
 router.get('/', (req, res) => {
     let places = [{
         name: 'PANDA',
@@ -23,6 +27,7 @@ router.get('/', (req, res) => {
     res.render('places/index', {places})
 })
 
+// NEW
 router.get('/new', (req, res) => {
     res.render('places/new')
   })
