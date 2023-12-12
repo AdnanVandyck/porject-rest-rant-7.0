@@ -6,10 +6,15 @@ require('dotenv').config()
 const PORT =process.env.PORT
 const app = express()
 
+// MIDDLEWARE
+app.set('view engine', 'jsx')
+app.engine('jsx', require('express-react-views').createEngine())
+
+
 app.use('/places', require('./controllers/places_controller'))
 
 app.get('/', (req, res) => {
-    res.send('Peace to the World!')
+    res.render('home')
 }
 )
 
