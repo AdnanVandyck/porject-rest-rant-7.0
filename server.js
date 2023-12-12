@@ -7,6 +7,9 @@ const PORT =process.env.PORT
 const app = express()
 
 // MIDDLEWARE
+
+app.use(express.urlencoded({ extended: true }))
+
 // Express Settings
 app.set('views', __dirname + '/views')
 app.set('view engine', 'jsx')
