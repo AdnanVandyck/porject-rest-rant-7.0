@@ -44,4 +44,6 @@ body {
     margin-left: 20px;
     background-color: white;
   }
-  
+a {
+    text-decoration: none;
+}

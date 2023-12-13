@@ -3,18 +3,20 @@ const express = require('express')
 
 // CONFIG
 require('dotenv').config()
-const PORT =process.env.PORT
 const app = express()
+const PORT =process.env.PORT
+
 
 // MIDDLEWARE
 
 app.use(express.urlencoded({ extended: true }))
+app.use(express.static('public'))
 
 // Express Settings
 app.set('views', __dirname + '/views')
 app.set('view engine', 'jsx')
 app.engine('jsx', require('express-react-views').createEngine())
-app.use(express.static('public'))
+
 
 
 // Controllers & Routes
