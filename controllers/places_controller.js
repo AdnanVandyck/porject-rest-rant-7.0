@@ -43,10 +43,16 @@ router.get('/:id', (req, res) => {
     }
     else {
       res.render('places/show', { 
-        place: places[id] })
+        place: places[id], id })
     }
   })
 
+// EDIT
+router.get('/:id/edit', (req, res) => {
+    res.send('Edit Page')
+  })
+
+//DELETE
   
 
 
