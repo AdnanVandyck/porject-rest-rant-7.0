@@ -31,11 +31,7 @@ router.get('/new', (req, res) => {
     res.render('places/new')
   })
 
-// EDIT PAGE
-  router.get('/:id/edit', (req, res) => {
 
-  res.send('edit page')
-})
 
   
 // SHOW
@@ -53,10 +49,13 @@ router.get('/:id', (req, res) => {
     }
   })
 
-// EDIT
-router.get('/:id/edit', (req, res) => {
-    res.send('Edit Page')
+  // EDIT PAGE
+  router.get('/:id/edit', (req, res) => {
+
+    res.render('places/edit')
   })
+
+  
 
 //DELETE
 router.delete('/:id', (req, res) => {
