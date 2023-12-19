@@ -30,7 +30,13 @@ router.get('/', (req, res) => {
 router.get('/new', (req, res) => {
     res.render('places/new')
   })
-  
+
+// EDIT PAGE
+  router.get('/:id/edit', (req, res) => {
+
+  res.send('edit page')
+})
+
   
 // SHOW
 router.get('/:id', (req, res) => {
