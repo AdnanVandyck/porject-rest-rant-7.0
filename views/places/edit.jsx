@@ -1,13 +1,39 @@
 const React = require('react')
 const Def = require('../default')
 
-function edit_form () {
+function edit_form (data) {
     return (
         <Def>
-          <main>
-            <h1>Edit Place</h1>
-          </main>
-        </Def>
+        <main>
+          <h1>Edit a Place</h1>
+          <form method="PUT" action={`/places/${data.place.id}?_method=PUT`}>
+            <div className="row">
+            <div className="form-group">
+              <label htmlFor="name">Place Name</label>
+              <input  className="form-control col-sm-6" id="name"  defaultValue={data.place.name} name="name" required />
+            </div>
+            <div className="form-group"> 
+              <label htmlFor="pic">Place Picture</label>
+              <input className="form-control col-sm-6" type="url" id="pic" defaultValue={data.place.pic} name="pic" />
+            </div>
+            <div className="form-group">
+              <label htmlFor="city">City</label>
+              <input className="form-control col-sm-6" id="city" defaultValue={data.place.city} name="city" />
+            </div>
+            <div className="form-group">
+              <label htmlFor="state">State</label>
+              <input className="form-control col-sm-6" id="state" defaultValue={data.place.state} name="state" />
+            </div>
+            <div className="form-group">
+              <label htmlFor="cuisines">Cuisines</label>
+              <input className="form-control col-sm-6" id="cuisines" defaultValue={data.place.cuisines} name="cuisines" required />
+            </div>
+            </div>
+            
+            <input className="btn btn-primary" type="submit" defaultValue="Add Place" />
+          </form>
+        </main>
+      </Def>
     )
 }
 
