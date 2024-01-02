@@ -2,11 +2,12 @@ const React = require('react')
 const Def = require('../default')
 
 function edit_form (data) {
+
     return (
         <Def>
         <main>
           <h1>Edit a Place</h1>
-          <form method="PUT" action={`/places/${data.place.id}?_method=PUT`}>
+          <form method="POST" action={`/places/${data.id}?_method=PUT`}>
             <div className="row">
             <div className="form-group">
               <label htmlFor="name">Place Name</label>
@@ -14,7 +15,7 @@ function edit_form (data) {
             </div>
             <div className="form-group"> 
               <label htmlFor="pic">Place Picture</label>
-              <input className="form-control col-sm-6" type="url" id="pic" defaultValue={data.place.pic} name="pic" />
+              <input className="form-control col-sm-6"  id="pic" defaultValue={data.place.pic} name="pic" />
             </div>
             <div className="form-group">
               <label htmlFor="city">City</label>
@@ -30,7 +31,7 @@ function edit_form (data) {
             </div>
             </div>
             
-            <input className="btn btn-primary" type="submit" defaultValue="Add Place" />
+            <input className="btn btn-primary" type="submit"/>
           </form>
         </main>
       </Def>

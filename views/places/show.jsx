@@ -16,11 +16,16 @@ function show(data) {
         <div>
           <img src={"/"+data.place.pic} alt={data.place.name} />
         </div>
-
+        <div>
+          <h3>Description</h3>
+          <p>Located in {data.place.city}, {data.place.state} and serving {data.place.cuisines}</p>
+        </div>
         <div>
           <h3>Comments</h3>
           <p>No comments yet!</p>
         </div>
+
+
         <a href={`/places/${data.id}/edit`} className="btn btn-warning">
           Edit
         </a>
