@@ -11,11 +11,11 @@ function Index (data) {
             height: "500px",
         }, 
     }
-    let placesFormatted = data.places.map((place, index) => {
+    let placesFormatted = data.places.map((place) => {
       return (
         <div className="col-sm-6">
           <h2>
-            <a href={`/places/${index}`}> 
+            <a href={`/places/${place.id}`}> 
             {place.name}
             </a>
                 </h2>

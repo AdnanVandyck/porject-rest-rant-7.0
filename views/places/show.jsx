@@ -14,7 +14,7 @@ function show(data) {
         </div>
 
         <div>
-          <img src={"/"+data.place.pic} alt={data.place.name} />
+          <img src={data.place.pic} alt={data.place.name} />
         </div>
         <div>
           <h3>Description</h3>

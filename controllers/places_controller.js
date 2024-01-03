@@ -16,7 +16,7 @@ router.get('/', (req, res) => {
 
 // POST
 router.post('/', (req, res) => {
-  db.Place.create(re.body)
+  db.Place.create(req.body)
   .then(() => {
     res.redirect('/places')
   })
@@ -32,8 +32,17 @@ router.get('/new', (req, res) => {
   res.render('places/new')
 })
 
+// SHOW
 router.get('/:id', (req, res) => {
-  res.send('GET /places/:id stub')
+  db.Place.findById(req.params.id)
+  .then(place => {
+    res.render('places/show', { place })
+  })
+  .catch(err => {
+    console.log('err', err)
+    res.render('error404')
+  })
+  // res.send('GET /places/:id stub')
 })
 
 router.put('/:id', (req, res) => {
