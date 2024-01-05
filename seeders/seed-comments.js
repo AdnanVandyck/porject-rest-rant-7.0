@@ -2,7 +2,7 @@ const db = require('../models/place')
 
 async function seed() {
     // Get the place, H-Thai-ML
-    let place = await db.Place.find({ name: 'H-Thai-ML' })
+    let place = await db.Place.findOne({ name: 'H-Thai-ML' })
 
     let comment = await db.Comment.create({
         author: 'Famished Fran',
