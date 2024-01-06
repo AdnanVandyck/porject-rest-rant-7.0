@@ -63,9 +63,7 @@ router.put('/:id', (req, res) => {
   res.send('PUT /places/:id stub')
 })
 
-router.delete('/:id', (req, res) => {
-  res.send('DELETE /places/:id stub')
-})
+
 
 // EDIT PLACES
 router.get('/:id/edit', (req, res) => {
@@ -97,4 +95,15 @@ router.delete('/:id/rant/:rantId', (req, res) => {
     res.send('GET /places/:id/rant/:rantId stub')
 })
 
+// DELETE - delete a place
+router.delete('/:id', (req, res) => {
+  db.Place.findByIdAndDelete(req.params.id)
+  .then(place => {
+    res.redirect('/places')
+  })
+  .catch(err => {
+    console.log('err', err)
+    res.render('error404')
+  })
+})
 module.exports = router
