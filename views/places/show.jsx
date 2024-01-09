@@ -69,7 +69,7 @@ function show(data) {
           <h4>
             Serving {data.place.cuisines}
           </h4>
-          <a href={`/places/${data.id}/edit`} className="btn btn-warning">
+          <a href={`/places/${data.place.id}/edit`} className="btn btn-warning">
           Edit
         </a>
 
